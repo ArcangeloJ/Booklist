@@ -1,0 +1,36 @@
+.book {
+    width: 280px;
+}
+
+.book .header {
+    background-color:  #F0F0F0;
+    border-radius: 10px 10px 0px 0px;
+}
+.book img {
+    width: 100px;
+    position: relative;
+    bottom: -50px;
+}
+
+.book .footer {
+    background: #FFFFFF;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.08);
+    border-radius: 0px 0px 10px 10px;
+    padding-top: 90px;
+    padding-bottom: 40px;
+}
+
+.book .footer h4 {
+    color: #808080;
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.book .footer h5 {
+    font-size: 18px;
+    line-height: 22px;
+    color: #212121;
+    padding: 0 16px;
+}
