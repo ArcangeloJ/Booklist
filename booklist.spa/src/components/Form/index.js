@@ -11,18 +11,38 @@ const Form = (props) => {
     const [cover, setCover] = useState('')
     const [category, setCategory] = useState('')
 
+    const addBook = (book) =>
+        fetch('/api/book/add', {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(book),
+        }).then(response => response.json());
+
     const onAddBook = (event) => {
-        event.preventDefault()
-        props.onBookAdded({
-            title,
-            author,
-            cover,
-            category   
-        })
-        setTitle('')
-        setAuthor('')
-        setCover('')
-        setCategory('')
+        event.preventDefault();
+        
+        if (!title || !author || !category) {
+            alert('Invalid Data!');
+            return;
+        }
+
+        const bookObj = {
+            title: title,
+            author: author,
+            cover: cover,
+            category: category   
+        };
+
+        addBook(bookObj).then(bookResponse => {
+            alert('Book added');
+            props.onBookAdded(bookResponse);
+            setTitle('');
+            setAuthor('');
+            setCover('');
+            setCategory('');
+        });
     }
 
     return (
@@ -48,7 +68,7 @@ const Form = (props) => {
                     onAltered={vlu => setCover(vlu)}
                 />
                 <DropDownList
-                    label='Cathegory'
+                    label='Category'
                     itens={props.categories}
                     vlu={category}
                     onAltered={vlu => setCategory(vlu)}

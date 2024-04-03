@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Banner from './components/Banner';
 import Form from './components/Form';
 import Category from './components/Category';
@@ -23,7 +23,16 @@ function App() {
     }
   ]
 
+  const getAllBooks = () => fetch('/api/book/getall').then(response => response.json());
+
   const [books, setBooks] = useState([])
+
+  useEffect(() => {
+    getAllBooks().then(bookResponse => { 
+      setBooks(bookResponse)
+    });
+  }, [])
+  
 
   const onNewBookAdded = (book) => {
     setBooks([...books, book])
@@ -39,7 +48,7 @@ function App() {
         name={category.name}
         primaryColor={category.primaryColor}
         secondaryColor={category.secondaryColor}
-        books={books.filter(book => book.category === category.name)}
+        books={books.filter(book => book.category.toLowerCase() === category.name.toLowerCase())}
       />)}
     </div>
   );
