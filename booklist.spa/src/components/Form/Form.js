@@ -1,7 +1,7 @@
 import './Form.css'
-import TextField from '../TextField'
-import DropDownList from '../DropDownList'
-import Button from '../Button'
+import TextField from '../TextField/TextField'
+import DropDownList from '../DropDownList/DropDownList'
+import Button from '../Button/Button'
 import { useState } from 'react'
 
 const Form = (props) => {

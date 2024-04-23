@@ -1,5 +1,5 @@
-import './category.css'
-import Book from '../Book'
+import './Category.css'
+import Book from '../Book/Book'
 
 const Category = (props) => {
     const css = {backgroundColor: props.secondaryColor}

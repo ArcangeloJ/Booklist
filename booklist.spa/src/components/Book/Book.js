@@ -1,4 +1,4 @@
-import './book.css'
+import './Book.css'
 
 const Book = ({ title, author, cover, bgColor }) => {
     return (

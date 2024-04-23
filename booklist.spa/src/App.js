@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import Banner from './components/Banner';
-import Form from './components/Form';
-import Category from './components/Category';
+import Banner from './components/Banner/Banner';
+import Form from './components/Form/Form';
+import Category from './components/Category/Category';
 
 function App() {
 

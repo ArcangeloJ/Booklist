@@ -5,7 +5,6 @@ function Banner() {
         <header className="banner">
             <img src="/images/banner.png" alt="Banner"></img>
         </header>
-
     )
 }
 

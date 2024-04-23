@@ -21,7 +21,7 @@
 }
 
 .book .footer h4 {
-    color: #808080;
+    color: #212121;
     font-size: 18px;
     line-height: 22px;
     font-weight: bold;
@@ -31,6 +31,6 @@
 .book .footer h5 {
     font-size: 18px;
     line-height: 22px;
-    color: #212121;
+    color: #808080;
     padding: 0 16px;
 }
